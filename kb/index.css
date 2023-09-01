@@ -1,0 +1,955 @@
+html {
+    /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+  }
+  
+  /* 노말라이즈 */
+  body, ul, li, h1 {
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  
+  a {
+    color:inherit;
+    text-decoration:none;
+  }
+  
+  label[for] {
+    cursor:pointer;
+    user-select:none;
+  }
+  
+  /* 라이브러리 */
+  .border-red {
+    border:4px solid red;
+  }
+  
+  .border-pink {
+    border:4px solid pink;
+  }
+  
+  .border-blue {
+    border:4px solid blue;
+  }
+  
+  .border-green {
+    border:4px solid green;
+  }
+  
+  .border-black {
+    border:4px solid black;
+  }
+  
+  .border-gold {
+    border:4px solid gold;
+  }
+  
+  .flex {
+    display:flex;
+  }
+  
+  .flex-jc-e {
+    justify-content:flex-end;
+  }
+  
+  .flex-jc-s {
+    justify-content:flex-start;
+  }
+  
+  .flex-jc-c {
+    justify-content:center;
+  }
+  
+  .flex-jc-sb {
+    justify-content:space-between;
+  }
+  
+  .flex-ai-c {
+    align-items:center;
+  }
+  
+  .flex-as-c {
+      align-self: center;
+  }
+  
+  .flex-grow-1 {
+      flex-grow: 1;
+  }
+  
+  .flex-wrap {
+      flex-wrap: wrap;
+  }
+  
+  .height-100p {
+    height:100%;
+  }
+  
+  .block {
+    display:block;
+  }
+  
+  .con {
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .img-box > img {
+    width: 100%;
+    display: block;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .txt-al-c {
+      text-align: center;
+  }
+  
+  /* cos lib */
+  .ico {
+      background-color: white;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-image: url(https://www.kakaobank.com/static/images/web/img_kabang_220615.png);
+  }
+  
+  .ico-1 {
+     background-position: -341px -292px; 
+  }
+  
+  .ico-2 {
+      background-position: -371px -292px;
+  }
+  
+  /* 커스텀 */
+  ::selection {
+      background-color: #fede22;
+  }
+  
+  .con {
+      width: 1080px;
+  }
+  
+  .con-min-width {
+      min-width: 1080px;
+  }
+  
+  .strong {
+      font-weight: bold;
+  }
+  
+  .black {
+      color: black;
+  }
+  
+  /* 탑바 시작 */
+  body {
+      margin-top: 80px;
+  }
+  
+  .top-bar {
+      height: 80px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      z-index: 10;
+  }
+  
+  /* 탑바 - 메뉴박스 1 */
+  .top-bar .menu-box-1 > ul > li > a {
+      padding: 0 20px;
+      position: relative;
+  }
+  
+  .top-bar .menu-box-1 ul > li > a:hover {
+      text-decoration: underline;
+  }
+  
+  .top-bar .menu-box-1 > ul > li > a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      border-top: 2px solid black;
+      bottom: -1px;
+      left: 0;
+      transition: width .3s;
+  }
+  
+  .top-bar .menu-box-1 > ul > li:hover > a::after {
+      width: 100%;
+  }
+  
+  /* 탑바 - 메뉴박스 1 - 2차 메뉴 */
+  .top-bar .menu-box-1 > ul > li > div {
+      width: 100%;
+      background-color: white;
+      display: none;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 1px);
+      padding-top: 30px;
+      padding-bottom: 40px;
+  }
+  
+  .top-bar .menu-box-1 > ul > li:hover > div {
+      display: block;
+  }
+  
+  .top-bar .menu-box-1 > ul > li > div > div > ul > li {
+      width: 20%;
+  }
+  
+  .top-bar .menu-box-1 > ul > li:first-child > div > div > ul > li {
+      width: 25%;
+  }
+  
+  .top-bar .menu-box-1 > ul > li > div > div > ul > li > a {
+      text-align: center;
+      padding: 30px 0;
+  }
+  
+  /* 탑바 - 메뉴박스 1 - 3차 메뉴 */
+  .top-bar .menu-box-1 > ul > li > div > div > ul > li > ul > li > a {
+      text-align: center;
+      padding: 10px 0;
+      color: #444;
+      font-size: 13px;
+  }
+  
+  /* 탑바 - 서류제출버튼 */
+  .top-bar .btn-go-submit {
+      background-color: #fede22;
+      padding: 13px 20px;
+      border-radius: 30px;
+  }
+  
+  /* 탑바 - 언어변경 버튼 */
+  .top-bar .global-logo {
+      padding: 0 20px;
+      cursor: default;
+  }
+  
+  .top-bar .global-logo:hover > img {
+      opacity: .3;
+  }
+  /* 탑바 끝 */
+  
+  /* 상단 배너박스 1 시작 */
+  .top-banner-box-1 {
+    position: relative;
+  }
+  
+  .top-banner-box-1 .bg {
+    height: 720px;
+    width: 100%;
+    background-color: #ffef6b;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  /* 상단 배너박스 1 - 텍스트 박스 */
+  .top-banner-box-1 .txt-box {
+    position: absolute;
+    top: 135px;
+    left: 30px;
+  }
+  
+  .top-banner-box-1 > div:last-child > img {
+      width: 1200px;
+      height: 884px;
+      margin-left: -60px;
+  }
+  
+  .top-banner-box-1 .txt-box > h1 {
+    font-size: 49px;
+    line-height: 1.4;
+  }
+  
+  .top-banner-box-1 .txt-box > h2 {
+    font-size: 16px;
+    line-height: 1.95;
+    font-weight: 300;
+    opacity: .7;
+  }
+  
+  .top-banner-box-1 .txt-box > .btns {
+    margin-top: 50px;
+  }
+  
+  .top-banner-box-1 .txt-box > .btns > li:not(:first-child) {
+    margin-left: 10px;
+  }
+  
+  .top-banner-box-1 .txt-box > .btns > li > a {
+    display: flex;
+    width: 178px;
+    height: 56px;
+    background-color: white;
+    color: #333;
+    font-size: 16.2px;
+    font-weight: bold;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .top-banner-box-1 .txt-box > .btns > li:hover > a {
+    text-decoration: underline;
+  }
+  
+  .top-banner-box-1 .txt-box > .btns > li > a > .ico {
+    margin-right: 8px;
+  }
+  /* 상단 배너박스 1 끝 */
+  
+  /* 상단 배너박스 타입 1 시작 */
+  .top-banner-box-type-1 {
+      margin-top: 38px;
+    min-height: 500px;
+    display: flex;  
+  }
+  
+  .top-banner-box-type-1 > div:first-child {
+    width: 55%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-banner-box-type-1 > div:last-child {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-banner-box-type-1-between-pad {
+    height: 32px;
+    background-color: #fafafa;
+  }
+  
+  .top-banner-box-type-1 .txt-box > h1 {
+    font-size: 40px;
+    line-height: 1.35;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .des {
+    margin-top: 24px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #666;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .btn-box {
+    margin-top: 40px;
+    display: flex;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .btn-box > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    width: 258px;
+    height: 56px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 10px;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .btn-box > a:hover > span {
+    text-decoration: underline;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .btn-box > a::after {
+    content: ">";
+    margin-left: 10px;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .btn-box > a:not(:only-child) {
+    width: 158px;
+  }
+  
+  .top-banner-box-type-1 .txt-box > .btn-box > a:not(:last-child) {
+    margin-right: 5px;
+  }
+  /* 상단 배너박스 타입 1 끝 */
+  
+  /* 상단 배너박스 2 시작 */
+  .top-banner-box-2 > div:first-child > * {
+    margin-left: 38px;
+  }
+  
+  .top-banner-box-2 > div:last-child > * {
+    margin-left: 38px;
+  }
+  
+  .top-banner-box-2 .img-box {
+    width: 473px;
+  }
+  /* 상단 배너박스 2 끝 */
+  
+  /* 상단 배너박스 3 시작 */
+  .top-banner-box-3 > div:first-child > * {
+    margin-left: 70px;
+  }
+  
+  .top-banner-box-3 > div:last-child > * {
+    margin-left: 65px;
+  }
+  
+  .top-banner-box-3 .txt-box > .img-box-1 {
+    margin-top: 50px;
+  }
+  
+  .top-banner-box-3 .txt-box > .img-box-1 > img {
+    width: 440px;
+  }
+  
+  .top-banner-box-3 .img-box {
+    width: 409px;
+  }
+  
+  .top-banner-box-3 .img-box > img {
+    transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1), opacity 1s;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .top-banner-box-3 .img-box.active > img {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  /* 상단 배너박스 3 끝 */
+  
+  /* 상단 배너박스 4 시작 */
+  .top-banner-box-4 > div:first-child > * {
+    margin-left: 57px;
+  }
+  
+  .top-banner-box-4 > div:last-child > * {
+    margin-left: 38px;
+  }
+  
+  .top-banner-box-4 .img-box {
+    width: 459px;
+  }
+  /* 상단 배너박스 4 끝 */
+  
+  /* 상단 배너박스 5 시작 */
+  .top-banner-box-5 > div:first-child > * {
+    margin-left: 130px;
+  }
+  
+  .top-banner-box-5 > div:last-child > * {
+    margin-right: 5px;
+  }
+  
+  .top-banner-box-5 .img-box {
+    width: 492px;
+  }
+  /* 상단 배너박스 5 끝 */
+  
+  /* 상단 배너박스 6 시작 */
+  .top-banner-box-6 > div:first-child > * {
+    margin-left: 75px;
+  }
+  
+  .top-banner-box-6 > div:last-child > * {
+    margin-left: 38px;
+  }
+  
+  .top-banner-box-6-wrap {
+    background-image: url(https://www.kakaobank.com/static/images/web/home_map.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+  }
+  
+  .top-banner-box-6 .img-box {
+    width: 408px;
+  }
+  
+  .top-banner-box-6 .img-box > img {
+    transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1), opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+  .top-banner-box-6 .img-box.active > img {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  /* 상단 배너박스 6 끝 */
+  
+  /* 대출박스 시작 */
+  .loan-box {
+      background-color: #333b58;
+      position: relative;
+      color: white;
+      padding-top: 162px;
+  }
+  
+  .loan-box > .con {
+      position: relative;
+      z-index: 1;
+  }
+  
+  .loan-box > .sky {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+  }
+  
+  .loan-box > .sky > .blue {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #559cde;
+      transition: height .5s;
+  }
+  
+  .loan-box.active > .sky > .blue {
+      height: 0;
+  }
+  
+  .loan-box > .sky > .moon {
+      width: 112px;
+      height: 112px;
+      position: absolute;
+      top: 200px;
+      left: calc(50% + 455px);
+      overflow: hidden;
+  }
+  
+  .loan-box.active > .sky > .moon > .base {
+      background-color: white;
+  }
+  
+  .loan-box > .sky > .moon > .base {
+      width: 110px;
+      height: 110px;
+      background-color: #ffdc00;
+      border-radius: 50%;
+      transition: background-color 1s;
+  }
+  
+  .loan-box > .sky > .moon > .shadow {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      border-radius: 50%;
+      transition: top .5s .3s, left .5s .3s;
+  }
+  
+  .loan-box.active > .sky > .moon > .shadow {
+      top: -25%;
+      left: -25%;
+      background-color: #333b58;
+  }
+  
+  /* 대출박스 - 별 시작 */
+  .loan-box > .sky .ico-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .loan-box > .sky .ico-star-1 {
+    top: 30%;
+    left: 10%;
+  }
+  
+  .loan-box > .sky .ico-star-2 {
+    top: 10%;
+    left: 20%;
+  }
+  
+  .loan-box > .sky .ico-star-3 {
+    top: 25%;
+    left: 15%;
+  }
+  
+  .loan-box > .sky .ico-star-4 {
+    top: 40%;
+    right: 15%;
+  }
+  
+  .loan-box > .sky .ico-star-5 {
+    top: 43%;
+    right: 30%;
+  }
+  
+  .loan-box > .sky .ico-star-6 {
+    top: 73%;
+    right: 27%;
+  }
+  
+  .loan-box > .sky .ico-star-7 {
+    top: 65%;
+    left: 22%;
+  }
+  
+  @keyframes clittering {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
+  .loan-box > .sky .ico-star-1 {
+    animation: clittering 2s infinite;
+  }
+  
+  .loan-box > .sky .ico-star-2 {
+    animation: clittering 3s infinite;
+  }
+  
+  .loan-box > .sky .ico-star-3 {
+    animation: clittering 5s infinite;
+  }
+  
+  .loan-box > .sky .ico-star-4 {
+    animation: clittering 2s infinite;
+  }
+  
+  .loan-box > .sky .ico-star-5 {
+    animation: clittering 4s infinite;
+  }
+  
+  .loan-box > .sky .ico-star-6 {
+    animation: clittering 1.8s infinite;
+  }
+  
+  .loan-box > .sky .ico-star-7 {
+    animation: clittering 3.5s infinite;
+  }
+  /* 대출박스 - 별 끝 */
+  .loan-box > .con > h1 {
+      font-size: 40px;
+  }
+  
+  .loan-box > .con > .des {
+      font-size: 15px;
+      opacity: .6;
+      margin-top: 20px;
+  }
+  
+  .loan-box > .con > .menu-box-1 {
+    margin-top: 25px;
+  }
+  
+  .loan-box > .con > .menu-box-1 > ul > li {
+      margin: 0 3px;
+  }
+  
+  .loan-box > .con > .menu-box-1 > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.09);
+    width: 166px;
+    height: 52px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  
+  .loan-box > .con > .menu-box-1 > ul > li > a:hover > span {
+    text-decoration: underline;
+  }
+  
+  .loan-box > .con > .menu-box-1 > ul > li > a::after {
+    content: ">";
+    margin-left: 10px;
+  }
+  
+  .loan-box > .con > .img-box-1 {
+      margin-top: 20px;
+  }
+  
+  .loan-box > .con > .img-box-1 > img {
+      width: 429px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  /* 대출박스 끝 */
+  
+  /* 체크카드박스 시작 */
+  .checkcard-box {
+      padding-top: 150px;
+      padding-bottom: 150px;
+  }
+  
+  .checkcard-box h1 {
+      font-size: 40px;
+      line-height: 1.35;
+  }
+  
+  .checkcard-box > .con > .des {
+      margin-top: 24px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #666;
+  }
+  
+  .checkcard-box > .con > .btn-box {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .checkcard-box > .con > .btn-box > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f6f6f6;
+      width: 258px;
+      height: 56px;
+      font-size: 16px;
+      color: #333;
+      border-radius: 10px;
+  }
+  
+  .checkcard-box > .con > .btn-box > a:hover > span {
+      text-decoration: underline;
+  }
+  
+  .checkcard-box > .con > .btn-box > a::after {
+      content: ">";
+      margin-left: 10px;
+  }
+  
+  .checkcard-box .slider-box-1 {
+      margin-top: 80px;
+      width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+  }
+  
+  .checkcard-box .slider-box-1 .slick .item {
+      transition: transform .3s;
+  }
+  
+  .checkcard-box .slider-box-1 .slick .item > .img-box {
+      padding-top: 60px;
+      padding-bottom: 60px;
+  }
+  
+  .checkcard-box .slider-box-1 .slick .item.slick-center {
+      transform: scale(1.3);
+  }
+  
+  .checkcard-box .slider-box-1 .arrows > .btn-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(100% + 30px);
+      cursor: pointer;
+  }
+  
+  .checkcard-box .slider-box-1 .arrows > .btn-arrow:active {
+      transform: translateY(-40%);
+  }
+  
+  .checkcard-box .slider-box-1 .arrows > .btn-arrow.btn-arrow-right {
+      left: calc(100% + 30px);
+      right: auto;
+  }
+  /* 체크카드박스 끝 */
+  
+  /* it스킬박스 시작 */
+  .itskill-box {
+      padding-top: 155px;
+      padding-bottom: 170px;
+      background-color: #f9f9f9;
+      position: relative;
+      z-index: 1;
+  }
+  
+  .itskill-box > .con > h1 {
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 1.35;
+  }
+  
+  .itskill-box > .con > .divider {
+      margin-top: 40px;
+      height: 2px;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .itskill-box > .con > .divider::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100px;
+      background-color: black;
+  }
+  
+  .itskill-box > .con > .info-box {
+      margin-top: 120px;
+  }
+  
+  .itskill-box > .con > .info-box::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #eee;
+      left: 0;
+      transform: translateY(131px);
+      z-index: -1;
+  }
+  
+  .itskill-box > .con > .info-box > ul > li {
+      width: 285px;
+  }
+  
+  .itskill-box > .con > .info-box > ul > li:nth-child(2) {
+      margin-left: -28px;
+  }
+  
+  .itskill-box > .con > .info-box > ul > li > h1 {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 50px;
+  }
+  
+  .itskill-box > .con > .info-box > ul > li > .des {
+      font-size: 14px;
+      text-align: center;
+      color: #666;
+      margin-top: 20px;
+      font-weight: 200;
+  }
+  /* it스킬박스 끝 */
+  
+  /* 하단바 시작 */
+  .bottom-bar {
+      background-color: #eee;
+      font-size: 11px;
+      font-family: '돋움',dotum,sans-serif;
+      padding: 20px 0 16px;
+  }
+  
+  .bottom-bar .box-1 {
+      color: #666;
+  }
+  
+  .bottom-bar .box-1 > .menu-box-1 > ul > li:hover > a {
+      text-decoration: underline;
+  }
+  
+  .bottom-bar .box-1 > .menu-box-1 > ul > li > span {
+      float: left;
+      width: 1px;
+      height: 10px;
+      margin: 7px 15px;
+      background-color: #d8d8d8
+  }
+  
+  .bottom-bar .box-2 {
+      color: #888;
+      margin-top: 10px;
+  }
+  
+  .bottom-bar .box-2 > a {
+      font-size: 12px;
+  }
+  
+  .bottom-bar .box-2 > .rep-contact {
+      margin: 0 10px;
+  }
+  
+  .bottom-bar .box-2 > .copyright {
+      margin-top: 8px;
+  }
+  
+  .bottom-bar .box-3  {
+      margin-top: 15px;
+  }
+  
+  .bottom-bar .box-3 > a > span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+      margin-left: 8px;
+  }
+  
+  .bottom-bar .box-3 .auth-mark-1 {
+      margin-right: 20px;
+  }
+  
+  .bottom-bar .box-3 .auth-mark-1 > img {
+      width: 48px;
+  }
+  
+  .bottom-bar .box-3 .auth-mark-2 > img {
+      width: 42px;
+  }
+  
+  .bottom-bar .box-3 > .menu-box-2 > ul {
+      margin-right: 45px;
+  }
+  
+  .bottom-bar .box-3 > .menu-box-2 > ul > li {
+      margin-left: 10px;
+  }
+  
+  .bottom-bar .box-3 > .menu-box-2 > ul > li > a {
+      width: 24px;
+      height: 24px;
+  }
+  
+  .bottom-bar .box-3 > .menu-box-2 > ul > li > a > span {
+      height: 100%;
+  }
+  
+  .bottom-ico-2 {
+      background-image: url("https://www.kakaobank.com/static/images/web/ico_sns.png");
+  }
+  
+  .bottom-ico-2.ico-2-facebook {
+      background-position: 0 -90px;
+  }
+  
+  .bottom-ico-2.ico-2-instagram {
+      background-position: -191px -138px;
+  }
+  
+  .bottom-ico-2.ico-2-youtube {
+      background-position: -90px -90px;
+  }
+  
+  .bottom-ico-2.ico-2-blog {
+      background-position: -217px -138px;
+  }
+  /* 하단바 끝 */
